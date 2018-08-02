@@ -1,0 +1,28 @@
+/* #Info {
+  display: block;
+} */
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+#desc{
+  display: flex;
+  flex-basis: 8em;
+  position: relative;
+  top: 40px;
+}
+
+#gallery{
+  flex-basis: 60em;
+}
+
+#iteminfo {
+  display: flex;
+  position: relative;
+  left: 160px;
+  flex-basis: 100em;
+}
