@@ -1,0 +1,10 @@
+{
+ "proxies":
+ {
+   "default":
+   {
+     "httpProxy": "http://localhost:3005",
+     "noProxy": "*.test.example.com,.example2.com"
+   }
+ }
+}

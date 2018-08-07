@@ -1,0 +1,45 @@
+version: '2'
+
+services:
+  description:
+    build: descriptionService/
+    depends_on:
+      - 'database'
+    ports:
+      - '3002:3002'
+
+  gallery:
+    build: galleryService/
+    depends_on:
+      - 'database'
+    ports:
+      - '3003:3003'
+
+  service:
+    build: service/
+    depends_on:
+      - 'database'
+      - 'gallery'
+    ports:
+      - '3004:3004'
+
+  header:
+    build: headerService/
+    depends_on:
+      - 'database'
+    ports:
+      - '3007:3007'
+
+  proxy:
+    build: proxy/
+    depends_on:
+      - 'database'
+      - 'description'
+      - 'gallery'
+      - 'service'
+      - 'header'
+    ports:
+      - '3005:3005'
+
+  database:
+    image: mongo:latest
